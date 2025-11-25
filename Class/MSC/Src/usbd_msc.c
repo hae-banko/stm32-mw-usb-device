@@ -127,7 +127,7 @@ USBD_ClassTypeDef  USBD_MSC =
 #endif /* USE_USBD_COMPOSITE */
 #if (USBD_SUPPORT_USER_STRING_DESC == 1U)
   NULL,
-#endif
+#endif /* USBD_SUPPORT_USER_STRING_DESC  */
 };
 
 /* USB Mass storage device Configuration Descriptor */
