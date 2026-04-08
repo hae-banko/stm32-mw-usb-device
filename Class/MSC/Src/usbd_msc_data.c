@@ -81,7 +81,7 @@ uint8_t MSC_Page80_Inquiry_Data[LENGTH_INQUIRY_PAGE80] =
   0x00,
   0x80,
   0x00,
-  LENGTH_INQUIRY_PAGE80,
+  (LENGTH_INQUIRY_PAGE80 - 4U),
   0x20,     /* Put Product Serial number */
   0x20,
   0x20,

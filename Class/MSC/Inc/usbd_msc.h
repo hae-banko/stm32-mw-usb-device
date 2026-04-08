@@ -110,7 +110,7 @@ typedef struct
   uint8_t                  scsi_sense_tail;
   uint8_t                  scsi_medium_state;
 
-  USBD_MSC_BOT_LUN_TypeDef scsi_blk[MSC_BOT_MAX_LUN];
+  USBD_MSC_BOT_LUN_TypeDef scsi_blk[MSC_BOT_MAX_LUN + 1U];
 } USBD_MSC_BOT_HandleTypeDef;
 
 /* Structure for MSC process */

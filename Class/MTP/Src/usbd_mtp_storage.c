@@ -454,6 +454,15 @@ static uint8_t USBD_MTP_STORAGE_ReceiveContainer(USBD_HandleTypeDef  *pdev,
     return (uint8_t)USBD_FAIL;
   }
 
+  /* Convert byte count to uint32_t element count */
+  len = len / sizeof(uint32_t);
+
+  /* Clamp copy length to the size of OperationsContainer */
+  if (len > (sizeof(MTP_OperationsTypeDef) / sizeof(uint32_t)))
+  {
+    len = (sizeof(MTP_OperationsTypeDef) / sizeof(uint32_t));
+  }
+
   for (Counter = 0U; Counter < len; Counter++)
   {
     *pdst = (hmtp->rx_buff[Counter]);

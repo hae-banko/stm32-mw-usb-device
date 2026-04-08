@@ -487,7 +487,7 @@ static uint8_t USBD_MTP_DataIn(USBD_HandleTypeDef *pdev, uint8_t epnum)
         /* prepare to receive next operation */
         len = MIN(hmtp->MaxPcktLen, pdev->request.wLength);
 
-        (void)USBD_LL_PrepareReceive(pdev, MTPInEpAdd, (uint8_t *)&hmtp->rx_buff, len);
+        (void)USBD_LL_PrepareReceive(pdev, MTPOutEpAdd, (uint8_t *)&hmtp->rx_buff, len);
         break;
 
       case MTP_PHASE_IDLE :
